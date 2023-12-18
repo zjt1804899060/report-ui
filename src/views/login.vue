@@ -1,11 +1,3 @@
-<!--
- * @Descripttion: 登录
- * @version:
- * @Author: qianlishi
- * @Date: 2021-12-11 14:48:27
- * @LastEditors: qianlishi
- * @LastEditTime: 2022-06-23 17:23:23
--->
 <template>
   <div class="login_container">
     <!-- 顶部logo -->
@@ -14,23 +6,11 @@
         <div class="box">
           <img src="../../static/logo-dp.png" alt="" />
         </div>
-        <div class="name">AJ-Report</div>
+        <div class="name">Vue Admin</div>
       </div>
-      <!-- <div class="right">
-        <div class="item" @click="centerDialogVisible = true">说明</div>
-        <div class="item">
-          <a href="https://ajreport.beliefteam.cn/report-doc/" target="blank"
-            >文档</a
-          >
-        </div>
-        <div class="item">
-          <a href="https://gitee.com/anji-plus/report" target="blank">社区</a>
-        </div>
-      </div> -->
-      <!-- <img src="@/assets/images/home-logo.png" alt="logo" /> -->
     </div>
     <div class="login_contant">
-      <img src="@/assets/images/login.jpg" alt="image" class="login_img" />
+      <!-- <img src="@/assets/images/login.jpg" alt="image" class="login_img" /> -->
       <el-form
         ref="loginForm"
         :model="loginForm"
@@ -42,9 +22,7 @@
       >
         <div class="title_container">
           <h3 class="title">
-            HELLO,
-            <br />
-            <p class="title_name">在线大屏</p>
+            <p class="title_name">HELLO, 登录Vue Admin</p>
           </h3>
         </div>
         <div class="form_fields">
@@ -126,29 +104,6 @@
       :img-size="{ width: '400px', height: '200px' }"
       @success="verifylogin"
     />
-
-    <el-dialog
-      title="说明"
-      :visible.sync="centerDialogVisible"
-      width="34%"
-      center
-    >
-      <div style="font-size: 20px; line-height: 50px; margin-bottom: 50px">
-        AJ-Report由<a href="http://www.anji-plus.com/" target="_blank" style="text-decoration: underline"><b>安吉加加信息技术有限公司</b></a
-      >遵循 <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" style="text-decoration: underline; word-wrap: break-word"><strong style="color: orangered" >Apache2.0开源协议</strong></a
-      >在<a href="https://gitee.com/explore" target="_blank" style="text-decoration: underline; word-wrap: break-word"><b>Gitee平台</b></a
-      >进行开源。
-      </div>
-      <div style="font-size: 20px; line-height: 50px">
-        <strong> 个人/商业使用须遵循Apache2.0开源协议。</strong>
-        <strong style="color: orangered">禁止将AJ-Report产品用于违法违规业务。</strong>
-      </div>
-      <span slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="centerDialogVisible = false"
-          >确 定</el-button
-        >
-      </span>
-    </el-dialog>
   </div>
 </template>
 
@@ -169,8 +124,8 @@ export default {
       activeTop: "-50%",
       rememberPsw: false,
       loginForm: {
-        loginName: "",
-        password: "",
+        loginName: "guest",
+        password: "guest",
         verifyCode: ""
       },
       loginRules: {
@@ -182,8 +137,7 @@ export default {
       loading: false,
       redirect: undefined,
       otherQuery: {},
-      needCaptcha: false,
-      centerDialogVisible: false
+      needCaptcha: false
     };
   },
   watch: {
@@ -410,7 +364,7 @@ export default {
     .login_form {
       position: absolute;
       top: 50%;
-      right: 30%;
+      right: 50%;
       transform: translate(50%, -50%);
       min-width: 400px;
       width: 22%;
@@ -419,11 +373,13 @@ export default {
       border-radius: 11px;
       padding: 30px;
       overflow: hidden;
+      border: 1px solid transparent;
       .title_container {
         position: relative;
         .title {
           font-size: 24px;
           color: #1a1a1a;
+          text-align: center;
           .title_name {
             margin: 0;
             font-size: 18px;
@@ -454,7 +410,7 @@ export default {
           width: 4px;
           height: 50%;
           transition: top 0.2s;
-          background: #f5ab1b;
+          background: rgb(22, 93, 255);
           border-radius: 14px;
         }
         b {
@@ -507,14 +463,14 @@ export default {
           }
           & > input:checked::before {
             content: "\2713";
-            background-color: #f5ab1b;
+            background-color: rgb(22, 93, 255);
             position: absolute;
             top: 0;
             left: 0px;
             padding-left: 1.5px;
             width: 100%;
             height: 100%;
-            border: 1px solid #f5ab1b;
+            border: 1px solid rgb(22, 93, 255);
             border-radius: 2px;
             font-size: 12px;
             color: white;
@@ -523,12 +479,12 @@ export default {
         }
       }
       .login_btn {
-        width: 130px;
-        height: 40px;
-        background: #f5ab1b;
+        width: 100%;
+        height: 30px;
+        background: rgb(22, 93, 255);
         border: none;
-        border-radius: 10px;
-        font-size: 16px;
+        border-radius: 16px;
+        font-size: 12px;
         color: #ffffff;
         text-align: center;
       }

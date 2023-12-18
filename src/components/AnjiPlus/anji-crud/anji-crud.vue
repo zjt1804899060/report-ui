@@ -133,6 +133,7 @@
                 size="mini"
                 plain
                 @click="handleResetForm()"
+                icon="el-icon-refresh-right"
                 >重置</el-button
               >
               <el-button
@@ -140,6 +141,7 @@
                 size="mini"
                 type="primary"
                 @click="handleQueryForm('query')"
+                icon="el-icon-search"
                 >查询</el-button
               >
             </div>
