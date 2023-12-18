@@ -1,5 +1,5 @@
 <template>
-  <section class="app-main">
+  <section class="app-main" :class="[{ 'app-main--p0': $route.path == '/index' }]">
     <transition name="fade-transform" mode="out-in">
       <!-- or name="fade" -->
       <!-- <router-view :key="key"></router-view> -->
@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .app-main {
   /*50 = navbar  */
   padding: 16px 20px 0;
@@ -31,5 +31,9 @@ export default {
   position: relative;
   overflow: auto;
   background: #f5f8fa;
+  &--p0 {
+    padding: 0;
+    height: calc(100vh - 50px);
+  }
 }
 </style>

@@ -102,6 +102,12 @@ a:hover {
   background: #fff;
 }
 
+.border-container {
+  border: 1px solid rgb( 229,230,235 );
+  border-radius: 2px;
+  transition: box-shadow .2s cubic-bezier(0,0,1,1);
+}
+
 .filter-container {
   padding-bottom: 10px;
   .filter-item {

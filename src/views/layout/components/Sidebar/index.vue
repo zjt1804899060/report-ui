@@ -93,11 +93,19 @@ export default {
   &:hover {
     color: $base-color-white;
     background-color: $base-menu-background-active !important;
+    font-weight: normal;
+    i {
+      color: $base-color-white;
+    }
   }
 
   &.is-active {
     color: $base-color-white;
     background-color: $base-menu-background-active !important;
+    font-weight: normal;
+    i {
+      color: $base-color-white;
+    }
   }
 }
 
