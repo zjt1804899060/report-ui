@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-form label-width="100px" label-position="left">
-      <el-form-item label="数据集">
+      <el-form-item label="数据集(合)">
         <el-select
           size="mini"
           v-model="dataSetValue"

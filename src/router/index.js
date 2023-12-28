@@ -146,6 +146,18 @@ export const constantRouterMap = [
         }
       },
       {
+        path: 'dataset',
+        name: 'dataset',
+        component: () => import('@/views/dataset/index'),
+        meta: {
+          title: '数据集合',
+          icon: 'iconAPIwangguan',
+          keepAlive: true,
+          requireAuth: true,
+          permission: 'resultsetManage'
+        }
+      },
+      {
         path: 'report',
         name: 'reportIndex',
         component: () => import('@/views/reportManage/index'),
