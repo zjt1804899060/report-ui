@@ -39,4 +39,12 @@ export function reportDataSetDetail(data) {
   })
 }
 
+export function reportNewDataSetList(params) {
+  return request({
+    url: 'dataSet/pageListNew',
+    method: 'GET',
+    params,
+  })
+}
+
 export default { reportDataSetList, reportDataSetAdd, reportDataSetDeleteBatch, reportDataSetUpdate, reportDataSetDetail }

@@ -124,8 +124,8 @@ export default {
       activeTop: "-50%",
       rememberPsw: false,
       loginForm: {
-        loginName: "guest",
-        password: "guest",
+        loginName: "admin",
+        password: "123456",
         verifyCode: ""
       },
       loginRules: {

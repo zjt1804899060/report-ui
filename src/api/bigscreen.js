@@ -21,11 +21,11 @@ export function detailDashboard(data) {
 }
 
 // 数据集查询
-export function queryAllDataSet(data) {
+export function queryAllDataSet(params) {
   return request({
     url: 'dataSet/queryAllDataSet',
     method: 'get',
-
+    params
   })
 }
 

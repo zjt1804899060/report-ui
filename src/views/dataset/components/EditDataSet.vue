@@ -23,7 +23,7 @@
             :lg="8"
             :xl="8"
           >
-            <el-form-item label="数据源" prop="sourceCode">
+            <!-- <el-form-item label="数据源" prop="sourceCode">
               <el-select
                 v-model.trim="formData.sourceCode"
                 class="organisation"
@@ -37,7 +37,7 @@
                   :value="item.sourceCode"
                 />
               </el-select>
-            </el-form-item>
+            </el-form-item> -->
           </el-col>
           <el-col :xs="24" :sm="20" :md="7" :lg="7" :xl="7">
             <el-form-item label="数据集合编码" prop="setCode">
@@ -567,7 +567,7 @@ export default {
       basicDialog: false,
       dialogForm: {
         sourceName: "",
-        sourceCode: "",
+        sourceCode: "erp",
         sourceType: "",
         sourceDesc: "",
         sourceConfig: ""
@@ -663,7 +663,7 @@ export default {
           setName: "",
           setCode: "",
           setDesc: "",
-          sourceCode: "",
+          sourceCode: "erp",
           dynSentence: ""
         };
         this.tableData = [];
@@ -913,6 +913,8 @@ public class DemoGroovyHandler implements IGroovyHandler {
             this.formData.dataSetParamDtoList = this.tableData;
             this.formData.dataSetTransformDtoList = this.itemFilterList;
             this.formData.caseResult = JSON.stringify(this.cols);
+            debugger
+            this.formData.multiSet = 1;
             if (this.dialogFormVisibleTitle === "新增数据集合") {
               const { code } = await addDataSet(this.formData);
               if (code != "200") return;

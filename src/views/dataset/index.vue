@@ -39,7 +39,7 @@
 </template>
 <script>
 import {
-  reportDataSetList,
+  reportNewDataSetList,
   reportDataSetAdd,
   reportDataSetDeleteBatch,
   reportDataSetUpdate,
@@ -76,17 +76,17 @@ export default {
             label: "数据集合名称",
             field: "setName"
           },
-          {
-            inputType: "anji-select", //form表单类型 input|input-number|anji-select(传递url或者dictCode)|anji-tree(左侧树)|date|datetime|datetimerange
-            anjiSelectOption: {
-              url: "/dataSource/queryAllDataSource",
-              label: "sourceName",
-              option: "sourceCode",
-              mergeLabel: true
-            },
-            label: "数据源",
-            field: "sourceCode"
-          },
+          // {
+          //   inputType: "anji-select", //form表单类型 input|input-number|anji-select(传递url或者dictCode)|anji-tree(左侧树)|date|datetime|datetimerange
+          //   anjiSelectOption: {
+          //     url: "/dataSource/queryAllDataSource",
+          //     label: "sourceName",
+          //     option: "sourceCode",
+          //     mergeLabel: true
+          //   },
+          //   label: "数据源",
+          //   field: "sourceCode"
+          // },
           {
             inputType: "anji-select", //form表单类型 input|input-number|anji-select(传递url或者dictCode)|anji-tree(左侧树)|date|datetime|datetimerange
             anjiSelectOption: {
@@ -135,10 +135,13 @@ export default {
         buttons: {
           rowButtonsWidth: 180, // row自定义按钮表格宽度
           query: {
-            api: reportDataSetList,
+            api: reportNewDataSetList,
             permission: "resultsetManage:query",
             sort: "update_time",
-            order: "DESC"
+            order: "DESC",
+            params: {
+              multiSet: "1"
+            }
           },
           queryByPrimarykey: {
             api: reportDataSetDetail,
@@ -201,17 +204,17 @@ export default {
             ],
             disabled: false
           },
-          {
-            label: "数据源编码", //数据源编码
-            placeholder: "",
-            field: "sourceCode",
-            editField: "sourceCode",
-            inputType: "input",
-            rules: [
-              { min: 1, max: 50, message: "不超过50个字符", trigger: "blur" }
-            ],
-            disabled: false
-          },
+          // {
+          //   label: "数据源编码", //数据源编码
+          //   placeholder: "",
+          //   field: "sourceCode",
+          //   editField: "sourceCode",
+          //   inputType: "input",
+          //   rules: [
+          //     { min: 1, max: 50, message: "不超过50个字符", trigger: "blur" }
+          //   ],
+          //   disabled: false
+          // },
           {
             label: "数据集合类型", //数据源编码
             placeholder: "",

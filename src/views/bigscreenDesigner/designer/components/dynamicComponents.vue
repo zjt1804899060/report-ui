@@ -1,7 +1,23 @@
 <template>
   <div>
     <el-form label-width="100px" label-position="left">
-      <el-form-item label="数据集(合)">
+      <el-form-item label="数据分类">
+        <el-select
+          size="mini"
+          v-model="categorize"
+          placeholder="请选择"
+          @change="loadDataSet"
+        >
+          <el-option
+            v-for="item in categorizeList"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </el-form-item>
+      <!-- <el-form-item label="数据集(合)"> -->
+      <el-form-item label="数据列表">
         <el-select
           size="mini"
           v-model="dataSetValue"
@@ -67,7 +83,12 @@ export default {
       userNameList: [], // 用户
       setParamList: [], // 对应的不同的图形数据参数
       params: {},
-      chartProperties: {}
+      chartProperties: {},
+      categorize: 0,
+      categorizeList: [
+        { label: '数据集', value: 0 },
+        { label: '数据集合', value: 1 }
+      ]
     };
   },
   watch: {
@@ -95,7 +116,10 @@ export default {
   },
   methods: {
     async loadDataSet() {
-      const { code, data } = await queryAllDataSet();
+      const request = {
+        multiSet: this.categorize
+      }
+      const { code, data } = await queryAllDataSet(request);
       this.dataSet = data;
       if (code != "200") return;
     },

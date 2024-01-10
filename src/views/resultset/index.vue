@@ -39,7 +39,7 @@
 </template>
 <script>
 import {
-  reportDataSetList,
+  reportNewDataSetList,
   reportDataSetAdd,
   reportDataSetDeleteBatch,
   reportDataSetUpdate,
@@ -135,10 +135,13 @@ export default {
         buttons: {
           rowButtonsWidth: 180, // row自定义按钮表格宽度
           query: {
-            api: reportDataSetList,
+            api: reportNewDataSetList,
             permission: "resultsetManage:query",
             sort: "update_time",
-            order: "DESC"
+            order: "DESC",
+            params: {
+              multiSet: "0"
+            }
           },
           queryByPrimarykey: {
             api: reportDataSetDetail,
