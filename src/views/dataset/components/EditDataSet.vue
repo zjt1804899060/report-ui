@@ -706,7 +706,8 @@ export default {
           dynSentence: this.formData.dynSentence,
           dataSetParamDtoList: this.tableData,
           dataSetTransformDtoList: this.itemFilterList,
-          setType: this.setType
+          setType: this.setType,
+          multiSet: 1
         };
         const { code, data } = await testTransformSet(params);
         if (code != "200") return;
