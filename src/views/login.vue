@@ -6,7 +6,7 @@
         <div class="box">
           <img src="../../static/logo-dp.png" alt="" />
         </div>
-        <div class="name">Vue Admin</div>
+        <div class="name">数据中台</div>
       </div>
     </div>
     <div class="login_contant">
@@ -22,7 +22,7 @@
       >
         <div class="title_container">
           <h3 class="title">
-            <p class="title_name">HELLO, 登录Vue Admin</p>
+            <p class="title_name">HELLO, 登录数据中台</p>
           </h3>
         </div>
         <div class="form_fields">
@@ -104,6 +104,7 @@
       :img-size="{ width: '400px', height: '200px' }"
       @success="verifylogin"
     />
+    <div class="bg"></div>
   </div>
 </template>
 
@@ -269,6 +270,18 @@ export default {
 }
 
 .login_container {
+  .bg {
+    background: url("../../static/login_bg.jpg") no-repeat;
+    background-position: center center; /* 背景图片居中显示 */
+    background-attachment: fixed; /* 背景图片固定，不随页面滚动 */
+    background-size: cover; /* 背景图片覆盖整个页面，保持宽高比 */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
   .el-input {
     display: inline-block;
     width: 100%;

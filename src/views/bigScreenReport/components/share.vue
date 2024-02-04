@@ -189,10 +189,10 @@ export default {
     copyShare() {
       let content = "";
       if (this.dialogForm.sharePassword == "") {
-        content = "AJ-Report分享链接：" + this.reportShareUrl;
+        content = "数据中台系统分享链接：" + this.reportShareUrl;
       } else {
         content =
-          "AJ-Report分享链接：" +
+          "数据中台系统分享链接：" +
           this.reportShareUrl +
           "  分享码：" +
           this.dialogForm.sharePassword;

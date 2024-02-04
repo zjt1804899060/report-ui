@@ -3,7 +3,7 @@
     <div class="admin-title" @click="goBigScreen">
       <div class="con">
         <img src="../../../../../static/logo-dp.png" width="50" />
-        <span class="name">Vue Admin</span>
+        <span class="name">数据中台</span>
       </div>
     </div>
     <el-menu
