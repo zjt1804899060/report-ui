@@ -4,7 +4,7 @@
     <div class="login_title">
       <div class="left">
         <div class="box">
-          <img src="../../static/logo-dp.png" alt="" />
+          <img :src="logoUrl" alt="logo" />
         </div>
         <div class="name">数据中台</div>
       </div>
@@ -104,7 +104,7 @@
       :img-size="{ width: '400px', height: '200px' }"
       @success="verifylogin"
     />
-    <div class="bg"></div>
+    <div class="bg" :style="{ backgroundImage: 'url(' + bgUrl + ')' }"></div>
   </div>
 </template>
 
@@ -138,7 +138,9 @@ export default {
       loading: false,
       redirect: undefined,
       otherQuery: {},
-      needCaptcha: false
+      needCaptcha: false,
+      logoUrl: process.env.STATIC_URL + 'logo-dp.png',
+      bgUrl: process.env.STATIC_URL + 'login_bg.jpg',
     };
   },
   watch: {
@@ -271,7 +273,8 @@ export default {
 
 .login_container {
   .bg {
-    background: url("../../static/login_bg.jpg") no-repeat;
+    // background: url("../../static/login_bg.jpg") no-repeat;
+    background-repeat: no-repeat;
     background-position: center center; /* 背景图片居中显示 */
     background-attachment: fixed; /* 背景图片固定，不随页面滚动 */
     background-size: cover; /* 背景图片覆盖整个页面，保持宽高比 */

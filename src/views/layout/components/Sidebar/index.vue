@@ -2,7 +2,7 @@
   <el-scrollbar :class="{ 'is-collapse': isCollapse }" class="side-bar-container">
     <div class="admin-title" @click="goBigScreen">
       <div class="con">
-        <img src="../../../../../static/logo-dp.png" width="50" />
+        <img :src="logoUrl" width="50" />
         <span class="name">数据中台</span>
       </div>
     </div>
@@ -31,6 +31,11 @@ import { mapGetters } from "vuex";
 import SidebarItem from "./SidebarItem";
 
 export default {
+  data() {
+    return {
+      logoUrl: process.env.STATIC_URL + 'logo-dp.png'
+    }
+  },
   components: { SidebarItem },
   computed: {
     ...mapGetters(["sidebar"]),
