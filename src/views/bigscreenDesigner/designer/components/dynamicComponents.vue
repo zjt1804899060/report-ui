@@ -140,7 +140,8 @@ export default {
         chartType: this.chartType,
         setCode: this.setCode,
         chartProperties: this.chartProperties,
-        contextData
+        contextData,
+        multiSet: this.categorize
       };
       this.$emit("input", params);
       this.$emit("change", params);
